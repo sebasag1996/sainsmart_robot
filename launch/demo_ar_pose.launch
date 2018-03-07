@@ -26,6 +26,6 @@
   
    <node pkg="sainsmart_robot" name="cam_transformation_listener" type="camera_transformation_listener.py"/>
    <node pkg="sainsmart_robot" name="inv_kinematic" type="inverse_kin.py"/>
-   <node pkg="sainsmart_robot" name="   serial_python" type="serial_node.py" args="/dev/ttyACM0" output="screen"/>
+   <node pkg="sainsmart_robot" name="rosserial_python" type="serial_node.py" args="/dev/ttyACM0" output="screen"/>
    
 </launch>

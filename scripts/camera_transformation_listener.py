@@ -11,7 +11,7 @@ import geometry_msgs.msg
 if __name__ == '__main__':
 
     cam_point = geometry_msgs.msg.Point()
-    rospy.init_node('camera_tf_listener')
+    rospy.init_node('camera_transformation_listener')
 
     listener = tf.TransformListener()
     
@@ -29,5 +29,6 @@ if __name__ == '__main__':
         cam_point.z = trans[2]
         
         effector_position_publisher.publish(cam_point)
-
+        
+        
         rate.sleep()

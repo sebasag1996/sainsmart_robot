@@ -13,13 +13,13 @@ global pointX
 global pointY
 global pointZ
 
-def getPoint(data):
+def getPoint(cam_point):
 	global pointX
 	global pointY
 	global pointZ
-	pointX = data.x
-	pointY = data.y
-	pointZ = data.z
+	pointX = cam_point.x
+	pointY = cam_point.y
+	pointZ = cam_point.z
 
 
 def getTheta1(pointx,pointy):
@@ -72,10 +72,10 @@ def program():
 	pointY = 1
 	 
 
-	rospy.init_node('inverse_kinematic', anonymous=True)
+	rospy.init_node('inverse_kin', anonymous=True)
 	rate = rospy.Rate(10)
 
-	rospy.Subscriber("/point", Point, getPoint)	#Check if the suscriber name is irrelevant and can be anyone
+	rospy.Subscriber("/effector_position", Point, getPoint)	#Check if the suscriber name is irrelevant and can be anyone
 
 
 	pub_1 = rospy.Publisher('/servo1', UInt16, queue_size=10)	#Check the servo order 
