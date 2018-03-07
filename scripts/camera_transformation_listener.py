@@ -27,14 +27,6 @@ if __name__ == '__main__':
         cam_point.x = trans[0]
         cam_point.y = trans[1]
         cam_point.z = trans[2]
-       
-       """ 
-        angular = 4 * math.atan2(trans[1], trans[0])
-        linear = 0.5 * math.sqrt(trans[0] ** 2 + trans[1] ** 2)
-        
-        cmd = geometry_msgs.msg.Twist()
-        cmd.linear.x = linear
-        cmd.angular.z = angular"""
         
         effector_position_publisher.publish(cam_point)
 
