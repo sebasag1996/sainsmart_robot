@@ -1,6 +1,5 @@
 #!/usr/bin/env python  
 import roslib
-roslib.load_manifest('learning_tf')
 import rospy
 import math
 import tf
@@ -15,12 +14,14 @@ if __name__ == '__main__':
 
     listener = tf.TransformListener()
     
+    #!-- effector position 
     effector_position_publisher = rospy.Publisher('effector_position', geometry_msgs.msg.Point,queue_size=1)
 
     rate = rospy.Rate(10.0)
     while not rospy.is_shutdown():
         try:
-            (trans,rot) = listener.lookupTransform('/marker', '/map', rospy.Time(0))
+        #!-- 'marker', 'map'
+            (trans,rot) = listener.lookupTransform('/ar_marker', '/world', rospy.Time(0))
         except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
             continue
             
