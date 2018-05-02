@@ -17,9 +17,10 @@ def getPoint(cam_point):
 	global pointX
 	global pointY
 	global pointZ
-	pointX = cam_point.x
-	pointY = cam_point.y
-	pointZ = cam_point.z
+	pointX = cam_point.x*1000
+	pointY = cam_point.y*1000 
+	pointZ = cam_point.z*1000
+	print cam_point
 
 
 def getTheta1(pointx,pointy):
@@ -92,6 +93,9 @@ def program():
 			theta1 = getTheta1(pointX,pointY)
 			theta2 = getTheta2(pointX,pointY,pointZ)
 			theta3 = getTheta3(pointX,pointY,pointZ)
+			print theta1
+			print theta2
+			print theta3
 			if (theta1 != -1):
 				pub_1.publish(theta1)
 			else:
