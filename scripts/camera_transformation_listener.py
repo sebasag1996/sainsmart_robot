@@ -21,7 +21,7 @@ if __name__ == '__main__':
     while not rospy.is_shutdown():
         try:
         #!-- 'marker', 'map'
-            (trans,rot) = listener.lookupTransform('/ar_marker', '/world', rospy.Time(0))
+            (trans,rot) = listener.lookupTransform('/world', '/ar_marker', rospy.Time(0))
         except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
             continue
             
