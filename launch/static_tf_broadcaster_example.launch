@@ -1,0 +1,12 @@
+<!-- This is an example on how to create a static tf broadcaster 
+use rviz to watch the frames-->
+
+<launch>
+  <node pkg="tf" type="static_transform_publisher" name="world_to_cam" 
+        args="0 0 0.5 0 0 0 world head_camera 10" />
+    <!-- args= px py pz rotz roty rotx parent son rate -->
+    <!-- px,py,pz in meters. rotz,roty, rotx in radians -->
+  <node pkg="tf" type="static_transform_publisher" name="cam_to_marker" 
+        args="0.5 0 0 1.573 0 0 head_camera marker 10" />
+   
+</launch>

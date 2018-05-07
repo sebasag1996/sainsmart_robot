@@ -17,7 +17,7 @@ if __name__ == '__main__':
     #!-- effector position 
     effector_position_publisher = rospy.Publisher('effector_position', geometry_msgs.msg.Point,queue_size=1)
 
-    rate = rospy.Rate(10.0)
+    rate = rospy.Rate(1.0)
     while not rospy.is_shutdown():
         try:
         #!-- 'marker', 'map'
